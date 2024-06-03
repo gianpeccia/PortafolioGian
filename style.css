@@ -1,25 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-
 :root {
     --bg-color: #ffffff;
     --button-bg-color: #007bff;
     --button-text-color: #ffffff;
     --text-color: #000000;
     --h2-color: #000000;
+    --h1-span-color: #1e21dd;
+    /* Color predeterminado del texto del span */
 }
 
 .dark-mode {
-
-    --button-bg-color: #0a59ad;
-    --button-text-color: #ffffff;
     --bg-color: #121212;
+    --button-bg-color: #7931ec;
+    --button-text-color: #ffffff;
     --text-color: #e0e0e0;
-    --heading-color:var(--text-color)
+    --heading-color: var(--text-color);
+    /* Cambio del color del texto del span en modo oscuro */
 }
 
+/* Estilo para el botón al hacer hover */
+.btn:hover {
+    background-color: #112e7c;
+}
+
+.btnModo:hover {
+    background-color: #112e7c;
+}
+
+/* Estilo para el botón de cambio de modo al hacer hover en modo oscuro */
+.dark-mode .btnModo:hover {
+    background-color: #7004af;
+}
+
+.dark-mode .btn:hover {
+    background-color: #7004af;
+}
+
+.dark-mode .proyects .card span {
+    background-color: #7004af;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: var(--button-text-color);
+    background-color: var(--button-bg-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 1.5s ease;
+}
+
+.btnModo {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: var(--button-text-color);
+    background-color: var(--button-bg-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 1.5s ease;
+}
+
+/* Transición del color del span */
+header .content h1 span {
+    color: var(--heading-color);
+    transition: color 1.5s ease-in-out;
+}
+
+/* Cambio del color del span en modo oscuro */
+.dark-mode header .content h1 span {
+    color: var(--heading-color);
+}
+
+/* Estilo para el span dentro de h1 */
+header .content h1 span {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1.5px var(--h1-span-color);
+    transition: -webkit-text-stroke 3s ease-in-out, color 0.3s ease-in-out 0.2s;
+}
+
+.dark-mode header .content h1 span {
+    -webkit-text-stroke: 1.5px #7931ec;
+}
 
 * {
+
     padding: 0;
     margin: 0;
     outline: none;
@@ -40,7 +105,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    transition: background-color 0.3s ease-in-out 0.2s, color 0.3s ease-in-out 0.2s; /* Agrega la transición con un retraso de 1 segundo */
+    transition: background-color 0.4s ease-in-out 0.2s, color 0.3s ease-in-out 0.2s;
 }
 
 nav {
@@ -86,32 +151,22 @@ nav {
     width: 70%;
 }
 
-.btn {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    color: var(--button-text-color);
-    background-color: var(--button-bg-color);
-    border-radius: 5px;
-    cursor: pointer;
+.dark-mode .link a::after {
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #8d1dd8;
     transition: all 0.3s ease;
 }
 
-.btnModo{
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    color: var(--button-text-color);
-    background-color: var(--button-bg-color);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.dark-mode .link a:hover::after {
+    width: 70%;
 }
 
-.btn:hover {
-    background-color: #112e7c;
-}
-.btnModo:hover {
-    background-color: #112e7c;
-}
+
 
 .container {
     max-width: 1200px;
@@ -150,7 +205,8 @@ header .content h1 {
 }
 
 
-.header { /* Añade un estilo específico para el encabezado h2 */
+.header {
+    /* Añade un estilo específico para el encabezado h2 */
     margin-bottom: 1rem;
     text-align: center;
     font-size: 3rem;
@@ -158,10 +214,8 @@ header .content h1 {
     line-height: 4rem;
 }
 
-header .content h1 span {
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px #8aa7f5;
-}
+
+
 
 header .content p {
     margin-bottom: 2rem;
@@ -189,7 +243,7 @@ header .image::before {
 
 /* ------------------Estilo Cartas--------------------
 */
-section .header{
+section .header {
     margin-bottom: 1rem;
     text-align: center;
     font-size: 3rem;
@@ -197,14 +251,14 @@ section .header{
     line-height: 4rem;
 }
 
-.proyects{
+.proyects {
     margin-top: 4rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 }
 
-.proyects .card{
+.proyects .card {
     background-color: #27272a;
     padding: 1rem;
     border: 2px solid transparent;
@@ -212,12 +266,12 @@ section .header{
     transition: all 0.3s ease;
 }
 
-.proyects .card:hover{
+.proyects .card:hover {
     background-color: #323232;
     border-color: #ffffff;
 }
 
-.proyects .card span{
+.proyects .card span {
     display: inline-block;
     background-color: #1e40af;
     padding: 2px 9px;
@@ -227,29 +281,23 @@ section .header{
     border-radius: 5px;
 }
 
-.proyects .card h4{
+.proyects .card h4 {
     margin-bottom: 0.5rem;
     color: #ffffff;
     font-size: 1.2rem;
     font-weight: 600;
 }
 
-.proyects .card p{
+.proyects .card p {
     color: #ccc;
     margin-bottom: 1rem;
 }
 
-.proyects .card a{
+.proyects .card a {
     color: #fff;
     transition: all 0.3s ease;
 }
 
-.proyects .card a:hover{
+.proyects .card a:hover {
     color: #1e40af;
-}
-
-
-
-.footer-logo {
-    max-width: 100px;
 }
