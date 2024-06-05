@@ -107,6 +107,7 @@ body {
     transition: background-color 0.4s ease-in-out 0.2s, color 0.3s ease-in-out 0.2s;
 }
 
+/*
 nav {
     max-width: 1200px;
     margin: auto;
@@ -116,6 +117,24 @@ nav {
     justify-content: space-between;
     gap: 2rem;
     background-color: var(--nav-bg-color);
+}*/
+
+nav {
+    max-width: 100%;
+    margin: auto;
+    padding: 0.8rem 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: #fcfcfcf3;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Asegura que la barra de navegación esté siempre encima del contenido */
+}
+
+.dark-mode nav{
+    background-color: rgba(63, 58, 58, 0.945);
 }
 
 .nav-logo {
@@ -163,6 +182,7 @@ nav {
     margin: auto;
     padding: 5rem 2rem;
     color: var(--text-color);
+    justify-items: end;
 }
 
 .blur {
@@ -232,10 +252,14 @@ header .image::before {
     font-weight: 400;
     line-height: 20rem;
     color: #1d4ed8;
-    opacity: 0.2;
+    opacity: 0.4;
     z-index: -100;
 }
 
+.dark-mode header .image::before {
+    color: #7931ec;
+    opacity: 0.4;
+}
 
 /* ------------------Estilo Cartas--------------------
 */
@@ -306,7 +330,7 @@ section .header {
 footer{
     position: relative;
     display: grid;
-    grid-template-columns: 400px repeat(2, 1fr);
+    grid-template-columns: 450px repeat(1, 1fr);
     gap: 2rem;
 }
 
@@ -327,12 +351,15 @@ footer .column .socials{
     padding-top: 2rem;
 }
 
+.cvicono{
+    background-color: white;
+}
+
 footer .column .socials a{
     color: #000000;
     border: 1.3px solid #000000;
     padding: 5px 10px;
-    font-size: 1.25rem;
-    border-radius: 100%;
+    font-size: 1.5rem;
     transition: all 0.3s ease;
 }
 
@@ -363,7 +390,6 @@ footer .column h4{
 .dark-mode footer .column h4{
     color: #ffffff;
 }
-
 
 footer .column > a{
     display: block;
@@ -397,7 +423,16 @@ footer .column > a:hover{
     color: #fff;
 }
 
-.cvicono{
-    background-color: white;    
-}
 
+
+section .contact{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    background: rgb(250, 250, 250);
+    margin: 2rem auto;
+    padding: 0.5rem;
+    width: 25rem;
+}
