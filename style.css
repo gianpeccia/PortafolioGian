@@ -24,6 +24,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
@@ -39,6 +43,7 @@ a {
 img {
     width: 80%;
     display: flex;
+
 }
 
 .btn, .btnModo {
@@ -124,21 +129,36 @@ nav {
 .container {
     max-width: 1200px;
     margin: auto;
-    padding: 15rem 2rem;
+    padding: 13rem 2rem;
     color: var(--text-color);
 }
 
+
 .blur {
     position: absolute;
-    box-shadow: 0 0 1000px 80px #163ead;
+    box-shadow: -200px -100px 1000px 100px #163ead;
     z-index: -100;
 }
 
 .dark-mode .blur {
     position: absolute;
-    box-shadow: 0 0 1000px 80px #7931ec;
-
+    box-shadow: -200px -100px 1000px 100px #7931ec;
+    z-index: -100;
 }
+
+.blurprojects{
+    position: absolute;
+    box-shadow: 750px 30px 1000px 100px #163ead;
+    z-index: -100;
+}
+
+.dark-mode .blurprojects {
+    position: absolute;
+    box-shadow: 750px 30px 1000px 100px #7931ec;
+    z-index: -100;
+}
+
+
 
 header {
     position: relative;
@@ -170,6 +190,7 @@ header .content p {
 
 header .image {
     position: relative;
+    text-align: -webkit-center;
 }
 
 header .image::before {
@@ -211,15 +232,17 @@ section h1 {
     text-align: center;
 }
 
+/* ----------------- PROJECTS ------------------*/
+
 .projects {
     margin-top: 4rem;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
 }
 
 .projects .card {
-    background-color: #080e20;
+    background-color: #0e1836;
     padding: 1rem;
     border: 2px solid transparent;
     border-radius: 15px;
@@ -227,27 +250,31 @@ section h1 {
 }
 
 .dark-mode .projects .card {
-    background-color: #19191b;
+    background-color: #240329;
 }
 
 .projects .card:hover {
     background-color: #001F54;
-    border-color: #ffffff;
+    border-color: #3411ff;
 }
 
 .dark-mode .projects .card:hover {
-    background-color: #323232;
-    border-color: #ffffff;
+    background-color: #440341;
+    border-color: #5d0a68;
 }
 
 .projects .card span {
     display: inline-block;
     background-color: #1e40af;
     padding: 2px 9px;
-    margin-bottom: 1rem;
+    margin: 0.25rem;
     font-size: 1.50rem;
     color: #ffffff;
     border-radius: 5px;
+}
+
+.dark-mode .projects .card span {
+    background-color: #640770d8;
 }
 
 .projects .card .tipo {
@@ -259,10 +286,16 @@ section h1 {
 }
 
 .projects .card h4 {
-    margin-bottom: 0.5rem;
+    margin-top: 1rem;
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
+}
+
+.projects .imgproject{
+    padding: 0.5rem;
+    margin: auto;
+    width: 400px;
 }
 
 .projects .card p {
@@ -283,6 +316,32 @@ section h1 {
     color: #7931ec;
 }
 
+
+/* ----------------- CONTACT ------------------*/
+
+section .contact { /*caja de redes*/
+    display: flex;
+    justify-content: space-around;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    background: rgba(219, 215, 215, 0.836);
+    margin: 2rem auto;
+    padding: 0.3rem;
+    width: 20rem;
+}
+
+.container .titulocontacto {
+    padding: 2rem 0;
+    max-width: 1600px;
+}
+
+.container .titulocontacto h1 {
+    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+
 .titulocontacto {
     background-color: #acc5e291;
     text-align: center;
@@ -297,6 +356,53 @@ section h1 {
     border-color: #7c12b9be;
 }
 
+.contactheader{
+    font-size:3rem;
+    padding-top: 2rem;
+    color: #111badd8;
+    transition: color 0.3s, transform 0.3s;
+    display: flex;
+    gap: 3rem;
+}
+
+.contactheader a:hover {
+    color: #2e3ae2;
+    transform: scale(1.15);
+    transition: color 0.3s, transform 0.4s;
+}
+
+.dark-mode .contactheader{
+    color: #765aa3;
+}
+
+.dark-mode .contactheader a:hover {
+    color: #981ae0;
+}
+
+.container .contact a {
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    color: #9aa1fd;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.dark-mode .container .contact a {
+    color: #413344;
+}
+
+.container .contact a:hover {
+    color: #2e3ae2;
+    transform: scale(1.2);
+}
+
+.dark-mode .container .contact a:hover {
+    color: #9306b6;
+}
+
+footer.container {
+    padding: 1rem;
+}
+
 footer {
     position: relative;
     display: grid;
@@ -304,65 +410,9 @@ footer {
     gap: 2rem;
 }
 
-footer .container{
+footer container {
     padding: 1rem;
 }
-
-section .contact {
-    display: flex;
-    justify-content: space-around;
-    border-radius: 2rem;
-    border: rgb(53, 53, 53) 0.1rem solid;
-    border-color: rgb(163, 163, 163);
-    background: rgba(219, 215, 215, 0.836);
-    margin: 2rem auto;
-    padding: 0.3rem;
-    width: 20rem;
-}
-
-.contactinfo {
-    padding: 2rem 0;
-}
-
-.contactinfo .titulocontacto h1 {
-    margin-bottom: 1rem;
-    font-size: 3.5rem;
-    font-weight: 500;
-}
-
-.contactinfo .contact a {
-    font-size: 1.5rem;
-    margin: 0 0.5rem;
-    color: #9aa1fd;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.dark-mode .contactinfo .contact a {
-    color: #c49ece;
-}
-
-.contactinfo .contact a:hover {
-    color: #2e3ae2;
-    transform: scale(1.2);
-}
-
-.dark-mode .contactinfo .contact a:hover {
-    color: #9306b6;
-}
-
-.copyright {
-    text-align: center;
-    padding: 0.8rem;
-    background-color: #b5bcc934;
-    font-size: 0.9rem;
-    color: #423131;
-    font-weight: 100;
-}
-
-.dark-mode .copyright {
-    color: #fff;
-}
-
 
 footer .logo{
     float: inline-end;
@@ -385,31 +435,19 @@ footer p {
 .copyright {
     text-align: center;
     padding: 0.8rem;
-    background-color: #f1f1f1;
     font-size: 0.9rem;
-    color: #423131;
-    background-color: #b5bcc934;
-    max-width: 100%;
+    background-color: #6186cc34;
+    font-size: 0.9rem;
+    color: #837373;
     font-weight: 100;
 }
 
 .dark-mode .copyright {
+    background-color: #3f0a7034;
     color: #fff;
 }
 
 /*
 section, header {
     scroll-margin-top: 100px;
-}
- /* Ajusta este valor según la altura de tu encabezado */
-
-html{
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.4s ease-in-out 0.2s, color 0.3s ease-in-out 0.2s;
 }
