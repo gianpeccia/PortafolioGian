@@ -7,7 +7,6 @@
     --text-color: #000000;
     --h2-color: #000000;
     --h1-span-color: #1e21dd;
-    /* Color predeterminado del texto del span */
 }
 
 .dark-mode {
@@ -15,32 +14,34 @@
     --button-bg-color: #7931ec;
     --text-color: #e0e0e0;
     --heading-color: var(--text-color);
-    /* Cambio del color del texto del span en modo oscuro */
 }
 
-/* Estilo para el botón al hacer hover */
-.btn:hover {
-    background-color: #112e7c;
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
 }
 
-.btnModo:hover {
-    background-color: #112e7c;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.4s ease-in-out 0.2s, color 0.3s ease-in-out 0.2s;
 }
 
-/* Estilo para el botón de cambio de modo al hacer hover en modo oscuro */
-.dark-mode .btnModo:hover {
-    background-color: #7004af;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.dark-mode .btn:hover {
-    background-color: #7004af;
+img {
+    width: 80%;
+    display: flex;
 }
 
-.dark-mode .proyects .card span {
-    background-color: #7004af;
-}
-
-.btn {
+.btn, .btnModo {
     padding: 1rem 2rem;
     font-size: 1rem;
     color: var(--button-text-color);
@@ -52,59 +53,14 @@
 
 .btnModo {
     padding: 0.5rem 1rem;
-    font-size: 1rem;
-    color: var(--button-text-color);
-    background-color: var(--button-bg-color);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 1.5s ease;
 }
 
-/* Transición del color del span */
-header .content h1 span {
-    color: var(--heading-color);
-    transition: color 1.5s ease-in-out;
+.btn:hover, .btnModo:hover {
+    background-color: #112e7c;
 }
 
-/* Cambio del color del span en modo oscuro */
-.dark-mode header .content h1 span {
-    color: var(--heading-color);
-}
-
-/* Estilo para el span dentro de h1 */
-header .content h1 span {
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1.5px var(--h1-span-color);
-    transition: -webkit-text-stroke 3s ease-in-out, color 0.3s ease-in-out 0.2s;
-}
-
-.dark-mode header .content h1 span {
-    -webkit-text-stroke: 1.5px #7931ec;
-}
-
-* {
-
-    padding: 0;
-    margin: 0;
-    outline: none;
-    border: none;
-    box-sizing: border-box;
-}
-
-img {
-    width: 80%;
-    display: flex;
-}
-
-a {
-    text-decoration: none;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.4s ease-in-out 0.2s, color 0.3s ease-in-out 0.2s;
+.dark-mode .btn:hover, .dark-mode .btnModo:hover {
+    background-color: #7004af;
 }
 
 nav {
@@ -118,13 +74,13 @@ nav {
     background-color: #fcfcfcf3;
     position: sticky;
     top: 0;
-    z-index: 1000; /* Asegura que la barra de navegación esté siempre encima del contenido */
+    z-index: 1000;
     border-bottom: inset;
     border-bottom-width: 2px;
     border-bottom-color: rgba(223, 223, 223, 0.836);
 }
 
-.dark-mode nav{
+.dark-mode nav {
     background-color: rgba(63, 58, 58, 0.945);
     border-bottom-color: grey;
 }
@@ -162,19 +118,14 @@ nav {
 }
 
 .dark-mode .link a::after {
-
     background-color: #8d1dd8;
-
 }
-
-
 
 .container {
     max-width: 1200px;
     margin: auto;
-    padding: 5rem 2rem;
+    padding: 15rem 2rem;
     color: var(--text-color);
-    justify-items: end;
 }
 
 .blur {
@@ -186,12 +137,11 @@ nav {
 .dark-mode .blur {
     position: absolute;
     box-shadow: 0 0 1000px 80px #7931ec;
-    z-index: -100;
+
 }
 
 header {
     position: relative;
-    padding-top: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
@@ -215,6 +165,7 @@ header .content h1 {
 header .content p {
     margin-bottom: 2rem;
     color: var(--text-color);
+    max-width: 50ch;
 }
 
 header .image {
@@ -240,9 +191,19 @@ header .image::before {
     opacity: 0.4;
 }
 
-/* ------------------Estilo Cartas--------------------
-*/
-section h1{
+header .content h1 span {
+    color: var(--heading-color);
+    transition: color 1.5s ease-in-out;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1.5px var(--h1-span-color);
+    transition: -webkit-text-stroke 3s ease-in-out, color 0.3s ease-in-out 0.2s;
+}
+
+.dark-mode header .content h1 span {
+    -webkit-text-stroke: 1.5px #7931ec;
+}
+
+section h1 {
     margin-bottom: 1rem;
     font-size: 3.5rem;
     font-weight: 500;
@@ -250,14 +211,14 @@ section h1{
     text-align: center;
 }
 
-.proyects {
+.projects {
     margin-top: 4rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 }
 
-.proyects .card {
+.projects .card {
     background-color: #080e20;
     padding: 1rem;
     border: 2px solid transparent;
@@ -265,21 +226,21 @@ section h1{
     transition: all 0.3s ease;
 }
 
-.dark-mode .proyects .card{
+.dark-mode .projects .card {
     background-color: #19191b;
 }
 
-.proyects .card:hover {
+.projects .card:hover {
     background-color: #001F54;
     border-color: #ffffff;
 }
 
-.dark-mode .proyects .card:hover {
+.dark-mode .projects .card:hover {
     background-color: #323232;
     border-color: #ffffff;
 }
 
-.proyects .card span {
+.projects .card span {
     display: inline-block;
     background-color: #1e40af;
     padding: 2px 9px;
@@ -289,46 +250,40 @@ section h1{
     border-radius: 5px;
 }
 
-h2 .header{
-    font-size: rem;
-    margin-bottom: 1rem;
-}
-
-.proyects .card .tipo {
+.projects .card .tipo {
     background-color: #1282A2;
 }
 
-.dark-mode .proyects .card .tipo {
+.dark-mode .projects .card .tipo {
     background-color: #9c3594;
 }
 
-
-.proyects .card h4 {
+.projects .card h4 {
     margin-bottom: 0.5rem;
     color: #ffffff;
     font-size: 1.2rem;
     font-weight: 600;
 }
 
-.proyects .card p {
+.projects .card p {
     color: #ccc;
     margin-bottom: 1rem;
 }
 
-.proyects .card a {
+.projects .card a {
     color: #fff;
     transition: all 0.3s ease;
 }
 
-.proyects .card a:hover {
+.projects .card a:hover {
     color: #1e40af;
 }
 
-.dark-mode .proyects .card a:hover {
+.dark-mode .projects .card a:hover {
     color: #7931ec;
 }
 
-.titulocontacto{
+.titulocontacto {
     background-color: #acc5e291;
     text-align: center;
     padding: 1.5rem;
@@ -337,19 +292,20 @@ h2 .header{
     margin-top: 5rem;
 }
 
-.dark-mode .titulocontacto{
+.dark-mode .titulocontacto {
     background-color: #7004af29;
     border-color: #7c12b9be;
 }
 
-
-/*---------------ARRANCA SECCION FOOTER--------------- */
-
 footer {
     position: relative;
     display: grid;
-    grid-template-columns: 450px repeat(1, 1fr);
+    grid-template-columns: 450px 1fr;
     gap: 2rem;
+}
+
+footer .container{
+    padding: 1rem;
 }
 
 section .contact {
@@ -358,14 +314,13 @@ section .contact {
     border-radius: 2rem;
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163, 163, 163);
-    background: rgb(250, 250, 250);
+    background: rgba(219, 215, 215, 0.836);
     margin: 2rem auto;
     padding: 0.3rem;
     width: 20rem;
 }
 
 .contactinfo {
-    text-align: center;
     padding: 2rem 0;
 }
 
@@ -394,6 +349,20 @@ section .contact {
 .dark-mode .contactinfo .contact a:hover {
     color: #9306b6;
 }
+
+.copyright {
+    text-align: center;
+    padding: 0.8rem;
+    background-color: #b5bcc934;
+    font-size: 0.9rem;
+    color: #423131;
+    font-weight: 100;
+}
+
+.dark-mode .copyright {
+    color: #fff;
+}
+
 
 footer .logo{
     float: inline-end;
@@ -426,4 +395,21 @@ footer p {
 
 .dark-mode .copyright {
     color: #fff;
+}
+
+/*
+section, header {
+    scroll-margin-top: 100px;
+}
+ /* Ajusta este valor según la altura de tu encabezado */
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.4s ease-in-out 0.2s, color 0.3s ease-in-out 0.2s;
 }
