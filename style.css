@@ -40,10 +40,25 @@ a {
     color: inherit;
 }
 
-img {
+
+.nav-logo img{
     width: 80%;
     display: flex;
+}
 
+.imagenfondo img{
+    display: flex;
+    width: 80%;
+}
+
+img.imgproject{
+    display: flex;
+    width: 80%;
+}
+
+.dark-mode img.icono{
+    filter: invert(1);
+    
 }
 
 .btn, .btnModo {
@@ -76,18 +91,19 @@ nav {
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    background-color: #fcfcfcf3;
+    background-image: linear-gradient(198deg, #6597ff99, transparent);
+    backdrop-filter: blur(3px);
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: inset;
     border-bottom-width: 2px;
     border-bottom-color: rgba(223, 223, 223, 0.836);
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .dark-mode nav {
-    background-color: rgba(63, 58, 58, 0.945);
+    background-image: linear-gradient(105deg, #5f0d966b, transparent);
     border-bottom-color: grey;
 }
 
@@ -231,7 +247,7 @@ header .content h1 span {
 }
 
 section h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-size: 3.5rem;
     font-weight: 500;
     line-height: 4rem;
@@ -333,6 +349,80 @@ section h1 {
 
 /* ----------------- CONTACT ------------------*/
 
+.tituloabout p{
+    text-align: center;
+    margin-bottom: 2rem;
+
+}
+
+.tituloabout h2{
+    font-size: 2.5rem;
+}
+
+.container .tituloabout h2 span {
+    color: var(--heading-color);
+    transition: color 1.5s ease-in-out;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1.5px var(--h1-span-color);
+    transition: -webkit-text-stroke 3s ease-in-out, color 0.3s ease-in-out 0.2s;
+    font-size: 40px;
+}
+
+.dark-mode .tituloabout h2 span {
+    -webkit-text-stroke: 1.5px #7931ec;
+}
+
+.skillslist{
+    list-style: none;
+    align-items: center;
+    justify-items: center;
+    font-size: 3rem;
+    margin: auto;
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    max-width: 1000px;
+    background-image: linear-gradient(to right, #2d8acbd1, #9aa1fd);
+    padding: 3rem;
+    border-radius: 48px;
+}
+
+.dark-mode .skillslist{
+    background-image: linear-gradient(to right, rgb(109 119 251 / 87%), rgb(122 45 203 / 50%));
+}
+
+
+.cartaskill{
+    
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    margin: auto;
+    height: 200px;
+    width: 140px;
+}
+
+.dark-mode .skillslist{
+    background-color: #42253B;
+}
+
+.cartaskill p{
+    font-size: 20px;
+    color: #000000;
+    font-weight: 500;
+}
+
+li{
+    text-align: center;
+}
+
+
+
+
+
+
 
 
 
@@ -364,7 +454,7 @@ section .contact { /*caja de redes*/
 }
 
 .titulocontacto {
-    background-color: #acc5e291;
+    background-color: #acc5e22c;
     text-align: center;
     padding: 1.5rem;
     border: outset;
@@ -473,7 +563,7 @@ section, header {
     scroll-margin-top: 100px;
 }*/
 
-@media (width < 900px){
+@media (width < 1000px){
     .nav-links{
         display: none;
     }
@@ -503,6 +593,9 @@ section, header {
     .contactheader{
         place-content: space-evenly;
     }
+    .skillslist{
+        grid-template-columns: repeat(3, 0.5fr);
+    }
 }
 
 
@@ -523,5 +616,8 @@ section, header {
     }
     .projects .card h4 {
         text-align: center;
+    }
+    .skillslist{
+        grid-template-columns: repeat(2, 0.5fr);
     }
 }
