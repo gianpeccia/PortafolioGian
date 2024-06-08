@@ -271,6 +271,26 @@ section h1 {
     transition: all 0.3s ease;
 }
 
+.projects .cardcomingsoon{
+    background-color: #212558;
+    color: #fff;
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    text-align: center;
+    align-content: center;
+    font-size: 1.7rem;
+}
+
+.dark-mode .projects .cardcomingsoon{
+    background-color: #1f132dd4;
+
+}
+
+
+
+
 .dark-mode .projects .card {
     background-color: #40104650;
 }
