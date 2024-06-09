@@ -651,9 +651,7 @@ section, header {
 }
 
 @media (width < 1000px){
-    .nav-links{
-        display: none;
-    }
+    
     header{
         grid-template-columns: repeat(1,1fr);
         /*sacar limite de ch para el parrafo*/
@@ -693,25 +691,77 @@ section, header {
 
 
 @media (width < 600px){
+    .container{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .contactheader{
+        font-size: 2rem;
+        padding-top: 0rem;
+        gap: 1rem;
+    }
+
+    section h1{
+        font-size: 40px;
+    }
+
+    .nav-links{
+        display: none;
+        background-image: linear-gradient(198deg, #6597ffe6, white);
+    }
+    nav{
+        padding: 0.8rem 1.5rem;
+    }
     header .image::before{
         display: none;
     }
     header .content h1{
         font-size: 40px;
-        text-align: center;
     }
     header .content h4{
         font-style: italic;
     }
 
+    header .content{
+        padding: 0rem;
+
+    }
+
     .projects{
         grid-template-columns: repeat(1,1fr);
     }
+
+    .projects .imgproject{
+        border-radius: 2rem;
+        width: 300px;
+    }
+    .iconochico {
+        width: 60px;
+        height: 60px;
+      }
+
+    .cartaskill p {
+        font-size: 16px;
+    }
+    .cartaskill{
+        height: auto;
+    }
+
     .projects .card h4 {
         text-align: center;
     }
     .skillslist{
-        grid-template-columns: repeat(2, 0.5fr);
+        grid-template-columns: repeat(3, 0.2fr);
+        max-width: 100%;
+        place-content: center;
+    }
+    .tituloabout h2{
+        font-size: 40px;
+        text-align: center;
+        font-weight: 500;
+        padding: 0.8rem;
     }
     section .contact p{
         display: none;
@@ -722,8 +772,14 @@ section, header {
     .container .contact .linkmail {
         font-size: 1.5rem;
     }
+
     .fotoabout {
-        shape-outside: none;
+        height: 220px;
+        width: 50%;
+        margin-top: -35px;
+        float: right;
+        margin-right: -30px;
+        shape-outside: circle();
     }
 
 
