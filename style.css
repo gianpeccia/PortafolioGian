@@ -49,6 +49,7 @@ a {
 .imagenfondo img{
     display: flex;
     width: 80%;
+    text-align: -webkit-center;
 }
 
 img.imgproject{
@@ -476,6 +477,11 @@ p.biografia{
     margin-bottom: 5rem;
 }
 
+.interests{
+    padding-top: 2rem;
+    margin-bottom: -6rem;
+}
+
 
 /* ----------------- CONTACT ------------------*/
 
@@ -690,8 +696,12 @@ section, header {
     section .contact p{
         display: none;
     }
+    section .contact {
+        width: 20rem;
+    }
     .container .contact .linkmail {
         font-size: 1.5rem;
     }
+
 
 }
