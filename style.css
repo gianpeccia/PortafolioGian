@@ -212,7 +212,8 @@ header .content h1 {
 header .content p {
     margin-bottom: 2rem;
     color: var(--text-color);
-    max-width: 50ch;
+    max-width: 38ch;
+    font-size: 18px;
 }
 
 header .image {
