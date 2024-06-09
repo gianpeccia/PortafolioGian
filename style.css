@@ -146,7 +146,7 @@ nav {
 .container {
     max-width: 1200px;
     margin: auto;
-    padding: 10rem 2rem;
+    padding: 6rem 2rem;
     
     color: var(--text-color);
 }
@@ -328,6 +328,14 @@ section h1 {
     background-color: #1282A2;
 }
 
+.projects .card .masnuevo {
+    background-color: #8d0c0c;
+}
+
+.dark-mode .projects .card .masnuevo {
+    background-color: #8d0c0c;
+}
+
 .dark-mode .projects .card .tipo {
     background-color: #9c3594;
 }
@@ -367,16 +375,24 @@ section h1 {
     color: #7931ec;
 }
 
-/* ----------------- CONTACT ------------------*/
+
+/* ----------------- ABOUT ------------------*/
 
 .tituloabout p{
     text-align: center;
-    margin-bottom: 2rem;
+    padding: 0.5rem;
 
+}
+
+.tituloabout span{
+    color: #c49c6f;
+    font-weight: 600;
 }
 
 .tituloabout h2{
     font-size: 2.5rem;
+    padding-left: 3.5rem;
+    text-align: center;
 }
 
 .container .tituloabout h2 span {
@@ -398,18 +414,18 @@ section h1 {
     justify-items: center;
     font-size: 0.5rem;
     margin: auto;
-    margin-top: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 4.5rem;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2.5rem;
+    grid-template-columns: repeat(4, 0.5fr);
     max-width: 1000px;
     background-image: linear-gradient(to right, #2d8acbd1, #9aa1fd);
-    padding: 3rem;
+    padding: 0.5rem;
     border-radius: 48px;
 }
 
 .dark-mode .skillslist{
-    background-image: linear-gradient(to right, rgb(109 119 251 / 87%), rgb(122 45 203 / 50%));
+    background: linear-gradient(225.58deg, rgb(7 4 254 / 69%) -84.51%, rgb(214 0 230 / 63%) 95.11%);
 }
 
 
@@ -438,14 +454,27 @@ li{
     text-align: center;
 }
 
+p.biografia{
+    font-size: 20px;
+    padding: 1rem;
+    text-align: left;
+    max-width: 50ch;
+}
 
+.fotoabout{
+    width: 230px;
+    height: 300px;
+    object-fit: cover;
+    margin-top: -72px;
+}
 
-
-
-
-
-
-
+.infoyfoto{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
 
 
 /* ----------------- CONTACT ------------------*/
@@ -459,7 +488,8 @@ section .contact { /*caja de redes*/
     background: rgba(219, 215, 215, 0.836);
     margin: 2rem auto;
     padding: 0.3rem;
-    width: 20rem;
+    width: 34rem;
+    align-items: center;
 }
 
 .container .titulocontacto {
@@ -510,11 +540,23 @@ section .contact { /*caja de redes*/
     color: #981ae0;
 }
 
+a.linkmail {
+    display: -webkit-box;
+}
+
 .container .contact a {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin: 0 0.5rem;
     color: #9aa1fd;
     transition: color 0.3s, transform 0.3s;
+}
+
+.container .contact .linkmail {
+    font-size: 1.1rem;
+    margin: 0 0.5rem;
+    color: #9aa1fd;
+    transition: color 0.3s, transform 0.3s;
+    align-content: center;
 }
 
 .dark-mode .container .contact a {
@@ -523,7 +565,12 @@ section .contact { /*caja de redes*/
 
 .container .contact a:hover {
     color: #2e3ae2;
-    transform: scale(1.2);
+    transform: scale(1.3);
+}
+
+.container .contact .linkmail:hover {
+    color: #2e3ae2;
+    transform: scale(1.1);
 }
 
 .dark-mode .container .contact a:hover {
@@ -578,10 +625,10 @@ footer p {
     color: #fff;
 }
 
-/*
+
 section, header {
     scroll-margin-top: 100px;
-}*/
+}
 
 @media (width < 1000px){
     .nav-links{
@@ -640,4 +687,11 @@ section, header {
     .skillslist{
         grid-template-columns: repeat(2, 0.5fr);
     }
+    section .contact p{
+        display: none;
+    }
+    .container .contact .linkmail {
+        font-size: 1.5rem;
+    }
+
 }
