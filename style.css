@@ -169,6 +169,8 @@ nav {
     list-style: none;
     display: flex;
     gap: 3rem;
+    align-items: center;
+
 }
 .nav-links a {
     text-decoration: none;
@@ -741,7 +743,7 @@ section, header {
 }
 
 
-@media (width < 600px){
+@media (width < 700px){
     .container{
         display: flex;
         justify-content: center;
@@ -779,9 +781,9 @@ section, header {
         padding-bottom: 1rem;
 
     }
-.dark-mode .nav-links{
-    background-image: linear-gradient(105deg, #5f0d96, #23003b);
-}
+    .dark-mode .nav-links{
+        background-image: linear-gradient(105deg, #5f0d96, #23003b);
+    }
 
     .nav-links li {
         text-align: center;
@@ -794,7 +796,7 @@ section, header {
 
     .nav-links.active {
         display: flex;
-        margin-left: 0;
+        margin: 0;
     }
     
     button#toggle-dark-mode {
