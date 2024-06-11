@@ -146,6 +146,7 @@ nav {
     justify-content: space-between;
     gap: 2rem;
     backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     position: sticky;
     top: 0;
     z-index: 1000;
