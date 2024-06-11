@@ -42,8 +42,8 @@
 }
 
 .arrow {
-    position: absolute;
-    bottom: 10%;
+    position: relative;
+    bottom: 80px;
     width: 30px;
     height: auto;
     animation: bounce 2s infinite;
@@ -157,8 +157,9 @@ nav {
 }
 
 .dark-mode nav {
-    background-image: linear-gradient(105deg, #5f0d966b, transparent);
-    border-bottom-color: grey;
+    background-image: linear-gradient(105deg, rgba(95, 13, 150, 0.42), transparent);
+    border-bottom-color: rgb(112 80 164 / 45%);
+    box-shadow: rgb(0 0 0) 0px 4px 8px;
 }
 
 .nav-logo {
@@ -710,7 +711,12 @@ section, header {
     
     header{
         grid-template-columns: repeat(1,1fr);
-        /*sacar limite de ch para el parrafo*/
+    }
+    .imagenfondo img {
+        width: 440px;
+    }
+    header .content p{
+        max-width: none;
     }
     header .content h1{
         font-size: 2.8rem;
@@ -744,13 +750,19 @@ section, header {
 
 
 @media (width < 700px){
-    .container{
+    .container {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
     }
+
+    #home {
+        padding-top: 3rem;
+    }
+
     .projects{
         justify-content: center;
+        margin-top: 1rem;
     }
     .projects .imgproject{
         border-radius: 2rem;
@@ -759,14 +771,17 @@ section, header {
     .contactheader{
         font-size: 1.5rem;
         padding-top: 0rem;
-        padding-bottom: 2rem;
         gap: 1rem;
+    }
+    .imagenfondo img {
+        width: 340px;
     }
     section h1{
         font-size: 40px;
     }
-
-
+    .arrow{
+        display: none;
+    }
     .nav-links {
         margin-left: 100%;
         transition: all 0.5s;
@@ -813,8 +828,11 @@ section, header {
     }
     header .content h4{
         font-style: italic;
+        font-size: 14px;
     }
-
+    header .content p {
+        font-size: 16px;
+    }
     header .content{
         padding: 0rem;
 
@@ -845,7 +863,7 @@ section, header {
         padding: 0.8rem;
     }
     .tituloabout p{
-        font-size: 18px;
+        font-size: 16px;
     }
 
     section .contact p{
