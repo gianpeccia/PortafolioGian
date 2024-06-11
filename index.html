@@ -10,21 +10,30 @@
     <title>Gian Peccia - Dev</title>
 </head>
 <body>
+    
     <nav>
         <div class="nav-logo">
             <a href="#home">
                 <img class="link" src="images/logoClaro.png" alt="Logo">
             </a>
         </div>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
         <ul class="nav-links">
             <li class="link"><a href="#home">Home</a></li>
             <li class="link"><a href="#projects">Projects</a></li>
             <li class="link"><a href="#about">About</a></li>
             <li class="link"><a href="#contact">Contact</a></li>
+            <button class="btnModo toggle-dark-mode" id="toggle-dark-mode">
+                <i class="ri-moon-line" id="toggle-icon"></i>
+            </button>
         </ul>
-        <button class="btnModo toggle-dark-mode" id="toggle-dark-mode">
-            <i class="ri-moon-line" id="toggle-icon"></i>
-        </button>
+        
     </nav>
 
     <header id="home" class="container">
@@ -35,7 +44,9 @@
                 solid foundation in database development & management, as well as backend programming.</p>
             <div class="contactheader">
                 <a href="https://www.linkedin.com/in/gianlucapecciarey" target="_blank"><i class="ri-linkedin-box-fill"></i>LinkedIn</a>
+                <a href="https://github.com/gianpeccia"><i class="ri-github-fill"></i>GitHub</a>
                 <a href="images/CV Gian Peccia English.pdf" download="CV_GianPeccia.pdf"><i class="ri-file-pdf-2-fill"></i>CV</a>
+
             </div>
             <blur class="blur"></blur>
         </div>
@@ -43,6 +54,13 @@
             <img src="images/imagenFondo2.png" alt="Fondo">
         </div>
     </header>
+
+    <div class="containerflecha">
+        <div class="arrow">
+            <a href="#projects"><img src="images/arrowdark.svg"></a>
+        </div>
+    </div>
+
 
     <section id="projects" class="container">
         <h1>Projects</h1>

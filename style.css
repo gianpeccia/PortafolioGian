@@ -16,6 +16,55 @@
     --heading-color: var(--text-color);
 }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 28px;
+    background-color: black;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+.dark-mode .bar{
+    background-color: rgb(216, 213, 213);
+}
+
+.containerflecha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+
+.arrow {
+    position: absolute;
+    bottom: 10%;
+    width: 30px;
+    height: auto;
+    animation: bounce 2s infinite;
+}
+
+.arrow img{
+    inline-size: -webkit-fill-available;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(50px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -91,12 +140,11 @@ img.imgproject{
 nav {
     max-width: 100%;
     margin: auto;
-    padding: 0.8rem 3.5rem;
+    padding: 0.5rem 3.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    background-image: linear-gradient(198deg, #6597ff99, transparent);
     backdrop-filter: blur(3px);
     position: sticky;
     top: 0;
@@ -105,6 +153,7 @@ nav {
     border-bottom-width: 2px;
     border-bottom-color: rgba(223, 223, 223, 0.836);
     font-size: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
 .dark-mode nav {
@@ -119,14 +168,18 @@ nav {
 .nav-links {
     list-style: none;
     display: flex;
-    align-items: center;
     gap: 3rem;
 }
-
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
 .link a {
     position: relative;
     padding-bottom: 0.75rem;
     color: var(--text-color);
+    font-size: 18px;
 }
 
 .link a::after {
@@ -258,6 +311,29 @@ section h1 {
     font-weight: 500;
     line-height: 4rem;
     text-align: center;
+}
+
+.contactheader{
+    font-size: 1.5rem;
+    padding-top: 2rem;
+    color: #111badd8;
+    transition: color 0.3s, transform 0.3s;
+    display: flex;
+    gap: 3rem;
+}
+
+.contactheader a:hover {
+    color: #2e3ae2;
+    transform: scale(1.15);
+    transition: color 0.3s, transform 0.4s;
+}
+
+.dark-mode .contactheader{
+    color: #765aa3;
+}
+
+.dark-mode .contactheader a:hover {
+    color: #981ae0;
 }
 
 /* ----------------- PROJECTS ------------------*/
@@ -398,8 +474,12 @@ section h1 {
 
 
 .tituloabout span{
-    color: #c49c6f;
+    color: #007bff;
     font-weight: 600;
+}
+
+.dark-mode .tituloabout span {
+    color: #8443ae;
 }
 
 .tituloabout h2{
@@ -527,29 +607,6 @@ section .contact { /*caja de redes*/
     border-color: #7c12b9be;
 }
 
-.contactheader{
-    font-size:3rem;
-    padding-top: 2rem;
-    color: #111badd8;
-    transition: color 0.3s, transform 0.3s;
-    display: flex;
-    gap: 3rem;
-}
-
-.contactheader a:hover {
-    color: #2e3ae2;
-    transform: scale(1.15);
-    transition: color 0.3s, transform 0.4s;
-}
-
-.dark-mode .contactheader{
-    color: #765aa3;
-}
-
-.dark-mode .contactheader a:hover {
-    color: #981ae0;
-}
-
 a.linkmail {
     display: -webkit-box;
 }
@@ -586,6 +643,9 @@ a.linkmail {
 .dark-mode .container .contact a:hover {
     color: #9306b6;
 }
+
+
+/* ------------ FOOTER -------------*/
 
 footer.container {
     padding: 1rem;
@@ -640,14 +700,15 @@ section, header {
     scroll-margin-top: 100px;
 }
 
+
+/*-----------------RESPONSIVE-------------------*/
+
+
 @media (width < 1000px){
     
     header{
         grid-template-columns: repeat(1,1fr);
         /*sacar limite de ch para el parrafo*/
-    }
-    header .content p {
-        max-width: none;
     }
     header .content h1{
         font-size: 2.8rem;
@@ -694,21 +755,54 @@ section, header {
         width: 300px;
     }
     .contactheader{
-        font-size: 2rem;
+        font-size: 1.5rem;
         padding-top: 0rem;
+        padding-bottom: 2rem;
         gap: 1rem;
     }
     section h1{
         font-size: 40px;
     }
-    .nav-links{
-        display: none;
-        background-image: linear-gradient(198deg, #6597ffe6, white);
+
+
+    .nav-links {
+        margin-left: 100%;
+        transition: all 0.5s;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        gap: 0px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding-bottom: 1rem;
+
     }
-    nav{
-        padding: 0.8rem 1.5rem;
-        background-image: linear-gradient(198deg, #6597ff, #ffffffcc);
+.dark-mode .nav-links{
+    background-image: linear-gradient(105deg, #5f0d96, #23003b);
+}
+
+    .nav-links li {
+        text-align: center;
+        padding: 1rem 0;
+        width: 100%;
     }
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links.active {
+        display: flex;
+        margin-left: 0;
+    }
+    
+    button#toggle-dark-mode {
+        width: 20%;
+        align-self: center;
+    }
+
+
     header .image::before{
         display: none;
     }
@@ -749,7 +843,7 @@ section, header {
         padding: 0.8rem;
     }
     .tituloabout p{
-        font-size: 20px;
+        font-size: 18px;
     }
 
     section .contact p{
@@ -763,10 +857,13 @@ section, header {
     }
     .fotoabout {
         height: 220px;
-        width: 36%;
-        margin-top: -35px;
+        width: 170px;
+        margin-top: -15px;
         float: right;
         margin-right: 0px;
         shape-outside: circle();
+    }
+    .containerflecha{
+        height: 0vh;
     }
 }
