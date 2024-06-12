@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --bg-color: #ffffff;
+    --bg-color: rgba(77, 166, 178, 0.219);
     --button-bg-color: #007bff;
     --button-text-color: #ffffff;
     --text-color: #000000;
@@ -10,7 +10,7 @@
 }
 
 .dark-mode {
-    --bg-color: #121212;
+    --bg-color: #17031e;
     --button-bg-color: #7931ec;
     --text-color: #e0e0e0;
     --heading-color: var(--text-color);
@@ -25,44 +25,13 @@
 .bar {
     height: 3px;
     width: 28px;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     margin: 3px 0;
     transition: all 0.3s ease;
 }
 
 .dark-mode .bar{
     background-color: rgb(216, 213, 213);
-}
-
-.containerflecha{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30vh;
-}
-
-.arrow {
-    position: relative;
-    bottom: 80px;
-    width: 30px;
-    height: auto;
-    animation: bounce 2s infinite;
-}
-
-.arrow img{
-    inline-size: -webkit-fill-available;
-}
-
-@keyframes bounce {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(50px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
 }
 
 * {
@@ -79,10 +48,11 @@ html{
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
+    background: linear-gradient(rgb(226, 228, 233) -47%, var(--bg-color) 4%);
     color: var(--text-color);
     transition: background-color 0.4s ease-in-out 0.2s, color 0.3s ease-in-out 0.2s;
 }
+
 
 a {
     text-decoration: none;
@@ -145,13 +115,14 @@ nav {
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: inset;
     border-bottom-width: 2px;
+    background-image: linear-gradient(105deg, rgba(77, 166, 178, 0.219), transparent);
     border-bottom-color: rgba(223, 223, 223, 0.836);
     font-size: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
@@ -216,7 +187,7 @@ nav {
 
 .blur {
     position: absolute;
-    box-shadow: -200px -100px 1000px 100px #163ead;
+    box-shadow: rgb(22, 62, 173) -15px -10px 400px 120px;
     z-index: -100;
 }
 
@@ -358,7 +329,7 @@ section h1 {
 }
 
 .projects .cardcomingsoon{
-    background-color: #212558;
+    background-color: #251d2e;
     color: #fff;
     padding: 1rem;
     border: 2px solid transparent;
@@ -373,9 +344,6 @@ section h1 {
     background-color: #1f132dd4;
 
 }
-
-
-
 
 .dark-mode .projects .card {
     background-color: #40104650;
@@ -459,6 +427,37 @@ section h1 {
 
 .dark-mode .projects .card a:hover {
     color: #7931ec;
+}
+
+.containerflecha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+
+.arrow {
+    position: relative;
+    bottom: 80px;
+    width: 30px;
+    height: auto;
+    animation: bounce 2s infinite;
+}
+
+.arrow img{
+    inline-size: -webkit-fill-available;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(50px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 
