@@ -312,13 +312,104 @@ section h1 {
     color: #981ae0;
 }
 
+.containerflecha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+
+.arrow {
+    position: relative;
+    bottom: 80px;
+    width: 30px;
+    height: auto;
+    animation: bounce 2s infinite;
+}
+
+.arrow img{
+    inline-size: -webkit-fill-available;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(50px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
 /* ----------------- PROJECTS ------------------*/
+.busqueda{
+    display: ruby;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 20px;
+    z-index: 1;
+    margin-left: 450px;
+}
+.dropdown-content input {
+    margin-right: 10px;
+}
+.dropdown-content label {
+    display: block;
+    margin: 5px 0;
+}
+.dark-mode .dropdown-content label{
+    color: #000000;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.apply-filters-btn{
+    background-color: #8abaee;
+    padding: 0.4rem;
+    border-radius: 20px;
+}
+.apply-filters-btn:hover{
+    background-color: #007bff;
+    cursor: pointer;
+}
+
+.filter-btn {
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+.filter-btn:hover {
+    background-color:#8abaee ;
+}
 
 .projects {
-    margin-top: 4rem;
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
+    background-color: #8ba0f6;
+    padding: 2rem;
+    border-radius: 51px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 8px -2px rgba(0, 0, 0, 1);
+}
+
+.dark-mode .projects{
+    background-color: #725bad;
 }
 
 .projects .card {
@@ -428,37 +519,6 @@ section h1 {
 
 .dark-mode .projects .card a:hover {
     color: #7931ec;
-}
-
-.containerflecha{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30vh;
-}
-
-.arrow {
-    position: relative;
-    bottom: 80px;
-    width: 30px;
-    height: auto;
-    animation: bounce 2s infinite;
-}
-
-.arrow img{
-    inline-size: -webkit-fill-available;
-}
-
-@keyframes bounce {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(50px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
 }
 
 
@@ -762,7 +822,9 @@ section, header {
     #home {
         padding-top: 3rem;
     }
-
+    .busqueda{
+        display: none;
+    }
     .projects{
         justify-content: center;
         margin-top: 1rem;

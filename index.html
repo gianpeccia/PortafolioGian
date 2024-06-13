@@ -63,10 +63,31 @@
 
 
     <section id="projects" class="container">
-        <h1>Projects</h1>
+            <h1>Projects</h1> 
+        <div class="dropdown">
+            <div class="busqueda">
+                <p>Looking for some specific technology/language? Try this! <i class="ri-arrow-right-line"></i> </p>
+                <button class="filter-btn"><img width="24" height="24" src="https://img.icons8.com/plumpy/48/search-in-list.png" alt="search-in-list"/></button>
+            </div>
+            
+            <div class="dropdown-content">
+                <label>Languages:</label>
+                <label><input type="checkbox" value="java"> Java</label>
+                <label><input type="checkbox" value="python"> Python</label>
+
+                <label>Technologies:</label>
+                <label><input type="checkbox" value="react"> React</label>
+                <label><input type="checkbox" value="javascript"> JavaScript</label>
+                <label><input type="checkbox" value="html"> HTML</label>
+                <label><input type="checkbox" value="css"> CSS</label>
+                <label><input type="checkbox" value="api"> API consume</label>
+                <button class="apply-filters-btn">Aplicar Filtros</button>
+            </div>
+        </div>
+
         <div class="projects">
 
-            <div class="card">
+            <div class="card" data-tech="html css javascript java">
                 <span class="tipo"><i class="ri-id-card-line"></i></span>
                 <span><i class="ri-html5-fill"></i></span>
                 <span><i class="ri-css3-fill"></i></span>
@@ -80,7 +101,7 @@
                 <a href="https://github.com/gianpeccia/PortafolioGian"><span class="tipo"><i class="ri-code-box-fill"></i></span></a>
             </div>
 
-            <div class="card">
+            <div class="card" data-tech="html javascript css java">
                 <span class="tipo"><i class="ri-restaurant-line"></i></span>
                 <span><i class="ri-html5-fill"></i></span>
                 <span><i class="ri-css3-fill"></i></span>
@@ -93,7 +114,7 @@
                 <a href="https://github.com/gianpeccia/PizzeriaAyacucho"><span class="tipo"><i class="ri-code-box-fill"></i></span></a>
             </div>
 
-            <div class="card">
+            <div class="card" data-tech="react javascript api">
                 <span class="tipo"><i class="ri-chat-new-line"></i></span>
                 <span><i class="ri-arrow-up-down-line"></i> API</span>
                 <span><i class="ri-reactjs-fill"></i></span>

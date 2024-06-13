@@ -8,6 +8,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
     const navItems = document.querySelectorAll('.nav-links a');
     
+    /* FILTRO DE BUSQUEDA DE PROYECTOS */
+    const applyFiltersBtn = document.querySelector('.apply-filters-btn');
+    const cards = document.querySelectorAll('.card');
+    const checkboxes = document.querySelectorAll('.dropdown-content input[type="checkbox"]');
+
+    applyFiltersBtn.addEventListener('click', () => {
+        const selectedTechs = Array.from(checkboxes)
+                                   .filter(checkbox => checkbox.checked)
+                                   .map(checkbox => checkbox.value);
+
+        cards.forEach(card => {
+            const techs = card.getAttribute('data-tech').split(' ');
+            if (selectedTechs.every(tech => techs.includes(tech)) || selectedTechs.length === 0) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+
+    // Mostrar todos los proyectos por defecto al cargar la página
+    applyFiltersBtn.click();
+
+
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         if (navLinks.classList.contains('active')) {
