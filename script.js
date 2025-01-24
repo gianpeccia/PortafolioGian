@@ -62,5 +62,31 @@ document.addEventListener('DOMContentLoaded', () => {
             
         }
     });
+    // Selecciona todos los elementos con la clase 'cargo'
+    const cargos = document.querySelectorAll('.cargo');
+
+    cargos.forEach(cargo => {
+        cargo.addEventListener('click', () => {
+            const descripcion = cargo.nextElementSibling;
+
+            // Si la descripción ya está activa, ciérrala y no abras ninguna
+            if (descripcion.classList.contains('activo')) {
+                descripcion.style.height = '0';
+                descripcion.classList.remove('activo');
+            } else {
+                // Cierra todas las descripciones abiertas
+                document.querySelectorAll('.descripcion.activo').forEach(desc => {
+                    desc.style.height = '0';
+                    desc.classList.remove('activo');
+                });
+
+                // Abre la descripción del cargo actual
+                descripcion.classList.add('activo');
+                descripcion.style.height = `${descripcion.scrollHeight}px`; // Ajusta la altura dinámicamente
+            }
+        });
+    });
+
+
 });
 

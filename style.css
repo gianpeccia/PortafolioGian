@@ -343,6 +343,90 @@ section h1 {
     }
 }
 
+/* ----------------- EXPERIENCE ------------------*/
+
+
+.experiencia-laboral {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #8ba0f6;
+    border-radius: 51px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 8px -2px rgba(0, 0, 0, 1);
+}
+
+.experiencia {
+    border-bottom: 1px solid #dddddd;
+    padding: 15px 0;
+}
+
+.cargo {
+    cursor: pointer;
+    padding: 10px;
+    background: #2b49a0c2;
+    border-radius: 15px;
+    transition: background 0.3s;
+}
+
+.cargo:hover {
+    /*background: #007bff;*/
+    background: #001f54
+}
+
+.cargo h2 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #f3f3f3;
+}
+
+.cargo .empresa {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #f3f3f3;
+}
+
+.fecha{
+    margin: 5px 0;
+    font-size: 1.1em;
+    color: #f3f3f3;
+    font-weight: bold;
+}
+
+.descripcion {
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin-top: 10px;
+    background: #b4c3ff;
+    border-left: 4px solid #001f54;
+    border-radius: 4px;
+    font-size: 0.95em;
+    line-height: 1.6;
+    transition: height 0.3s ease, padding 0.3s ease;
+    color: rgb(0, 0, 0);
+}
+
+.descripcion.activo {
+    padding-left: 10px;
+}
+
+.dark-mode .experiencia-laboral{
+    background-color: #725bad;
+}
+
+.dark-mode .cargo{
+    background-color: #40104650;
+}
+
+.dark-mode .cargo:hover {
+    background: #1b001f86
+}
+
+.dark-mode .descripcion{
+    background-color: #d3abeb7a;
+    border-left: 4px solid #5f0357;
+}
+
 /* ----------------- PROJECTS ------------------*/
 .busqueda{
     display: ruby;
@@ -817,6 +901,7 @@ section, header {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        padding: 2rem 1rem;
     }
 
     #home {
@@ -952,4 +1037,5 @@ section, header {
     .containerflecha{
         height: 0vh;
     }
+
 }
