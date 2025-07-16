@@ -694,13 +694,10 @@ li{
 }
 
 .fotoabout {
-    width: 230px;
-    height: 300px;
-    object-fit: cover;
-    margin-top: -30px;
     float: right;
-    margin-right: 20px;
-    shape-outside: circle();
+    margin: 20px 0 20px 20px;
+    width: 200px;
+    border-radius: 107px;
 }
 
 .infoyfoto{
@@ -1027,11 +1024,8 @@ section, header {
         font-size: 1.5rem;
     }
     .fotoabout {
-        height: 220px;
-        width: 170px;
-        margin-top: -15px;
-        float: right;
-        margin-right: 0px;
+        width: 120px;
+        margin-right: 10px;
         shape-outside: circle();
     }
     .containerflecha{
